@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>My first three.js app</title>
+		<style>
+			body { margin: 0; }
+			.viewports {
+				display: grid;
+				width: 1200px;
+				height: 1000px;
+				grid-template-columns: 1fr 1fr;
+				grid-template-rows: 1fr 1fr;
+				grid-column-gap: 2px;
+				grid-row-gap: 2px;
+				padding: 2px;
+				background-color: black;
+				font-size: 3rem;
+			}
+			.viewports div{
+				background-color: white;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+		</style>
+	</head>
+	<body>
+		<h2>Redimind</h2>
+		<div class="viewports">
+			<div>Front View</div>
+			<div>Top View</div>
+			<div>Left View</div>
+			<div style="width: 600px; height: 500px" id="container"></div>
+		</div>
+		<script src="js/three.js"></script>
+		<script type="module" src="js/script.js"></script>
+	</body>
+</html>
