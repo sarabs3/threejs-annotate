@@ -7,15 +7,16 @@
 			body { margin: 0; }
 			.viewports {
 				display: grid;
-				width: 1200px;
-				height: 1000px;
-				grid-template-columns: 1fr 1fr;
+				width: 99%;
+				height: 600px;
+				grid-template-columns: 300px 1fr 1fr;
 				grid-template-rows: 1fr 1fr;
 				grid-column-gap: 2px;
 				grid-row-gap: 2px;
 				padding: 2px;
 				background-color: black;
 				font-size: 3rem;
+				margin-top: 30px;
 			}
 			.viewports div{
 				background-color: white;
@@ -23,11 +24,35 @@
 				justify-content: center;
 				align-items: center;
 			}
+			.header {
+				position: fixed;
+				background-color: rgba(255, 255, 255, 0.9);
+				width: 100%;
+				height: 30px;
+				border-bottom: 1px solid #ccc;
+				top: 0;
+			}
+			.header h2 {
+				font-size: 16px;
+
+			}
+			.leftBar {
+				grid-column: 1;
+				grid-row-start: 1;
+				grid-row-end: 3;
+			}
+			#my_file {
+    display: none;
+}
 		</style>
 	</head>
 	<body>
-		<h2>Redimind</h2>
+		<div class="header"><h2>Redimind</h2></div>
 		<div class="viewports">
+			<div class="leftBar">
+				<button onclick="loadFile()">Load DICOM file</button>
+				<input type="file" id="my_file">
+			</div>
 			<div>Front View</div>
 			<div>Top View</div>
 			<div>Left View</div>
@@ -35,5 +60,10 @@
 		</div>
 		<script src="js/three.js"></script>
 		<script type="module" src="js/script.js"></script>
+		<script>
+			function loadFile () {
+				document.getElementById('my_file').click();
+			};
+		</script>
 	</body>
 </html>
